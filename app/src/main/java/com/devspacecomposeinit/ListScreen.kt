@@ -33,14 +33,14 @@ fun ArtistListScreen(navController: NavController) {
     val repo = ListRepo()
     val artists = repo.getArtistList()
 
-    ArtistList(artists){
+    ArtistListContent(artists){
         artist -> navController.navigate("artistDetail/${artist.id}")
     }
 }
 
 
 @Composable
-private fun ArtistList(
+fun ArtistListContent(
     artistList: List<Artist>,
     onClick: (Artist) -> Unit
 ) {
